@@ -1,0 +1,35 @@
+# quick sample of html.
+{% extends 'yourinterhitencehtml' %} # add appropriate inheritence
+{% load static %} # load your static if you need to
+{% block content %}
+
+
+<div class="container">
+	<h5>Test Request</h5><br>
+	
+	<div class="card card-body">
+		<form action="" method="POST">
+           	{% csrf_token %}
+			   <div class="form-row">
+				<div class="col-md-6 mb-3">
+				  <label for="field1">Name</label>
+				  {{form.field1}}
+				</div>
+				<div class="col-md-6 mb-3">
+				  <label for="field2">Email</label>
+				  {{form.field2}}
+				</div>
+			  </div>
+			  <div class="form-row">
+				<div class="col-md-6 mb-3">
+				  <label for="field3">dropdown</label>
+				  {{form.field3}}
+				</div>
+	  
+			<hr>
+			<input type="submit" class="btn btn-info">
+		</form>
+	</div>
+</div>
+
+{% endblock %}
